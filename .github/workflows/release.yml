@@ -19,7 +19,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with: { fetch-depth: 0 }
       - uses: actions/setup-node@v7
         with: { node-version: '22' }
@@ -37,7 +37,7 @@ jobs:
     outputs:
       published: ${{ steps.publish.outputs.published }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1. setup-node
       # ships an older npm even on Node 22, so it is upgraded explicitly.
@@ -154,7 +154,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - name: Package the plugin
         run: |
           zip -r "witness-${GITHUB_REF_NAME}.zip" . \
