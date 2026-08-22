@@ -23,7 +23,7 @@ jobs:
     steps:
       # Full history: check-links.js resolves the action refs the docs advertise
       # (@v0 and friends), and a shallow checkout has no tags to resolve them against.
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with: { fetch-depth: 0 }
       - uses: actions/setup-node@v7
         with:
@@ -57,7 +57,7 @@ jobs:
     name: plugin manifests validate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v7
         with: { node-version: '22' }
       # The official validator. It reads marketplace.json and every plugin.json
@@ -71,7 +71,7 @@ jobs:
     name: benchmark instrument selftest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v7
         with: { node-version: '20' }
       - uses: actions/setup-python@v7
@@ -91,7 +91,7 @@ jobs:
       github.event_name != 'push' ||
       contains(github.event.head_commit.message, '[wild]')
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v7
         with: { node-version: '20' }
 
@@ -135,7 +135,7 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with: { fetch-depth: 0 }
       - uses: actions/setup-node@v7
         with: { node-version: '20' }
@@ -157,7 +157,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with: { fetch-depth: 0 }
       - uses: actions/setup-node@v7
         with: { node-version: '20' }
